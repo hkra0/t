@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "sink",
+  "name": "t",
   "main": "dist/server/index.mjs",
   "assets": {
     "binding": "ASSETS",
@@ -12,6 +12,16 @@
   ],
   "keep_vars": true,
   "upload_source_maps": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "routes": [
+    {
+      "pattern": "t.hkra.xyz",
+      "custom_domain": true
+    }
+  ],
   "ai": {
     "binding": "AI"
   },
@@ -24,7 +34,7 @@
   "kv_namespaces": [
     {
       "binding": "KV",
-      "id": "ef93d42dc4b34969bab404d2e80f8dd3" // IMPORTANT: Change this to your KV namespace ID
+      "id": "cbf2fa5b76e94e058043f4ada48b02cb" // IMPORTANT: Change this to your KV namespace ID
     }
   ]
 }
